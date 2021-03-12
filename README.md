@@ -31,3 +31,9 @@ npm run server
 
 # MySQL Database name - product_schema
 
+
+# Images
+
+![](images/ReadMeImage1.PNG)
+
+
