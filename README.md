@@ -23,9 +23,11 @@ npm i redux react-redux redux-thunk axios @material-ui/lab
 
 
 To Run the Client App:
+cd client
 npm start
 
 To Run the Server:
+cd server
 npm run server  
 
 
