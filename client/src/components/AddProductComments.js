@@ -15,8 +15,11 @@ const AddProductComments = ({ productIdForComment, clearProductIdForComment }) =
             productId: productIdForComment, 
             comment: productComment
         };
-        dispatch(addProductComment(newProductComment));
+        await dispatch(addProductComment(newProductComment));
         
+        // Display an alert message
+        alert(`Comment - '${productComment}' Added Successfully!`);
+
         // Clear data
         setProductComment('');
         clearProductIdForComment(null);

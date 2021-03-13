@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'; 
-import { createProduct } from '../actions/products';
+import { createProduct, getProducts } from '../actions/products';
 import { getProductCategories } from '../actions/productCategories';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import TextField from '@material-ui/core/TextField';
@@ -41,7 +41,10 @@ const AddProduct = () => {
         e.preventDefault(); // Not to get the refresh in the Browser
 
         let updatedProductData = {...productData, categoryId: productCategoryId};
-        dispatch(createProduct(updatedProductData));
+        await dispatch(createProduct(updatedProductData));
+
+        await dispatch(getProducts());
+
         clear();
     };
 
