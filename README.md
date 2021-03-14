@@ -5,7 +5,7 @@
 
 In side 'server' folder:
 
-npm init -y
+//npm init -y
 
 // Install Regular dependencies
 npm i express dotenv body-parser cors sequelize mysql2
@@ -17,7 +17,7 @@ npm i -D nodemon
 
 In side 'client' folder:
 
-npx create-react-app .
+//npx create-react-app .
 
 npm i redux react-redux redux-thunk axios @material-ui/lab
 
