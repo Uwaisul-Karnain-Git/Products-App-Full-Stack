@@ -7,10 +7,13 @@ In side 'server' folder:
 
 //npm init -y
 
+
 // Install Regular dependencies:
+
 npm i express dotenv body-parser cors sequelize mysql2
 
 // Install Dev dependencies:
+
 npm i -D nodemon
 
 
