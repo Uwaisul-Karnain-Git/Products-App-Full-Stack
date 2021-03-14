@@ -42,15 +42,19 @@ npm run server
 
 Here I have implemented the 'Delete' functionality of a Product in a way where instead of deleting the actual record from the database, I'm setting the 'status' field of the product to 'deleted' and when retrieving Products, I'm not fetching the products that are in 'deleted' status.
 
-2. Product Search Functionality
+2. Multiple Delete Functionality
+In order to delete multiple products, select more than 1 products by checking the checkboxes in the 1st column and click on the 'Bulk Delete' button which will appear when multiple products are selected.
+
+3. Product Search Functionality
 
 'Product Search' can be done using 2 fields and for the simplicity of implementation, I have made the 'Product Name' field - Mandatory in this search functionality.
 
-3. Add Product Comments
+4. Add Product Comments
 This section will be displayed when you click on the 'Comments' button related to the Product that you want to add the comment to.
 
-4. Product Category - Auto Suggestion Box
+5. Product Category - Auto Suggestion Box
 This control will suggest the Product Categories based on the letters you enter here.
+
 
 # Images
 
