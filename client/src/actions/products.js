@@ -31,6 +31,8 @@ export const createProduct = (product) => async (dispatch) => {
         let  productData = JSON.stringify(product);
         const { data } = await api.createProduct(productData);
 
+        console.log('data is: ' + data);
+
         dispatch({ type: CREATE_PRODUCT, payload: data });
     } catch (err) {
         console.log(err);
@@ -38,9 +40,19 @@ export const createProduct = (product) => async (dispatch) => {
 };
 
 
-export const updatePostToDeleteState = (id, post) => async (dispatch) => {
-    try {
-      const { data } = await api.updatePostToDeleteState(id, post);
+// export const updateProductToDeleteState = (id, post) => async (dispatch) => {
+//     try {
+//       const { data } = await api.updateProductToDeleteState(id, post);
+      
+//       dispatch({ type: UPDATE_PRODUCT, payload: data });
+//     } catch (err) {
+//       console.log(err);
+//     }
+// };
+
+export const updateMultipleProductsToDeleteState = (ids) => async (dispatch) => {
+    try {      
+      const { data } = await api.updateMultipleProductsToDeleteState(ids);
       
       dispatch({ type: UPDATE_PRODUCT, payload: data });
     } catch (err) {
