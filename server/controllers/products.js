@@ -72,17 +72,28 @@ const getFilteredProducts = async (req, res) => {
     }
 };
 
-// Update the Product to 'deleted' state
-const updatePostToDeleteState = async (req, res) => {
-    const { id } = req.params;
+//// Update the Product to 'deleted' state
+// const updateProductToDeleteState = async (req, res) => {
+//     const { id } = req.params;
 
-    Product.findByPk(id).then(function(product) {
-        product.update({
-            status: 'deleted'
-        }).then((note) => {
-          res.json({ message: 'Status of the Product successfully updated to deleted' });
-        });
-      });
+//     console.log(`id: ${id}`);
+//     Product.findByPk(id).then(function(product) {
+//         product.update({
+//             status: 'deleted'
+//         }).then((note) => {
+//           res.json({ message: 'Status of the Product successfully updated to deleted' });
+//         });
+//       });
+// };
+
+// Update the Product to 'deleted' state
+const updateMultipleProductsToDeleteState = async (req, res) => {
+    const { ids } = req.body;
+    
+    Product.update({ status: 'deleted' },{ where : { id : ids }})
+    .then((note) => {
+        res.json({ message: 'Status of the Product(s) successfully updated to deleted' });
+    });
 };
 
 
@@ -90,7 +101,8 @@ const updatePostToDeleteState = async (req, res) => {
 module.exports = {
     createProduct,
     getFilteredProducts,
-    updatePostToDeleteState,
+    //updateProductToDeleteState,
+    updateMultipleProductsToDeleteState,
     getProducts
 }
 
