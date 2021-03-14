@@ -1,7 +1,7 @@
 const express = require('express');
 const connection = require('../config/database.js');
 //const connection = require('../models/index.js');
-const { getProducts, getFilteredProducts, createProduct, updatePostToDeleteState }  = require('../controllers/products.js'); 
+const { getProducts, getFilteredProducts, createProduct, updateMultipleProductsToDeleteState }  = require('../controllers/products.js'); 
 const Product = require('../models/Product.js');
 
 const productRouter = express.Router();
@@ -30,8 +30,10 @@ productRouter.post('/', createProduct);
 // });
 
 // Delete a Product - Update the 'Status' to 'deleted'
-productRouter.patch('/:id', updatePostToDeleteState);
+//productRouter.patch('/:id', updateProductToDeleteState);
 
+// Delete Multiple Products - Update the 'Status' to 'deleted'
+productRouter.patch('/', updateMultipleProductsToDeleteState);
 
 
 module.exports = productRouter;
